@@ -11,7 +11,7 @@ import (
 
 func main() {
     id := chinaid.IDCard("420683199006041237")
-    result := id.Check()
+    result := id.Valid()
     log.Println(">>>>", result)
 }
 ```
@@ -44,7 +44,7 @@ func main() {
     "cityCode":    420683,
     "city":        "枣阳市",
     "province":    "湖北省",
-    "sex": "男",
+    "sex":         "男",
     "birthday":    "1990-06-04 00:00:00 +0000 UTC",
 }
 ```
