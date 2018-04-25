@@ -1,5 +1,9 @@
 # CHINA ID(中国大陆身份证)
 
+[![Build Status](https://travis-ci.org/sleagon/chinaid.svg?branch=master)](https://travis-ci.org/sleagon/chinaid)
+
+> 校验、解析中国大陆身份证号
+
 ## 身份证号校验
 
 ```go
