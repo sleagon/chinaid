@@ -64,7 +64,7 @@ func main() {
 ```yml
 [[constraint]]
    name = "github.com/sleagon/chinaid"
-   version = "0.1"
+   version = "0.2"
 ```
 
 [1]: http://www.mca.gov.cn/

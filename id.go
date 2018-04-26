@@ -100,7 +100,6 @@ func (card IDCard) Decode() (IDCardDetail, error) {
 
 	// birthday
 	birth, err := time.Parse("20060102", id[6:14])
-	fmt.Println(id[6:14])
 	if err != nil {
 		return icd, ErrInvalidIDCardNo
 	}
