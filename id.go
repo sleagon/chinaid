@@ -134,7 +134,7 @@ func (addr *Addr) InitAddr(code int) {
 	if city, ex := cityMap[code]; ex {
 		addr.City = city
 	}
-	if prov, ex := cityMap[code/10000*10000]; ex {
+	if prov, ex := cityMap[code-code%10000]; ex {
 		addr.Province = prov
 	}
 }
