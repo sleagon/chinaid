@@ -31,11 +31,6 @@ var (
 	idCardCheckMap = []byte{'1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'}
 )
 
-type cityCode struct {
-	Code int    `json:"code"`
-	City string `json:"city"`
-}
-
 // IDCard 身份证号信息
 type IDCard string
 
@@ -120,18 +115,24 @@ func (card IDCard) Decode() (IDCardDetail, error) {
 }
 
 // Addr 地址信息
+// 修复问题: https://github.com/sleagon/chinaid/issues/1 改成3级划分了
 type Addr struct {
-	CityCode int    `json:"cityCode"`
+	Code     int    `json:"code"` // 这里之前是CityCode，改成三级以后，直接叫Code了
 	Province string `json:"province"`
 	City     string `json:"city"`
+	District string `json:"district"`
 }
 
 // InitAddr 初始化地址信息
 func (addr *Addr) InitAddr(code int) {
-	addr.CityCode = code
+	addr.Code = code
+	addr.District = "未知"
 	addr.City = "未知"
 	addr.Province = "未知"
-	if city, ex := cityMap[code]; ex {
+	if district, ex := cityMap[code]; ex {
+		addr.District = district
+	}
+	if city, ex := cityMap[code-code%100]; ex {
 		addr.City = city
 	}
 	if prov, ex := cityMap[code-code%10000]; ex {

@@ -7,16 +7,19 @@ import (
 
 // TestIDNum 正确性测试
 func TestIDNum(t *testing.T) {
-	testID := "420683199006041237"
+	testID := "341302199006041233"
 	detail, err := IDCard(testID).Decode()
 	if err != nil {
 		t.Error("Valid id parse failed.")
 	}
-	if detail.Province != "湖北省" {
+	if detail.Province != "安徽省" {
 		t.Error("Province check failed")
 	}
-	if detail.City != "枣阳市" {
+	if detail.City != "宿州市" {
 		t.Error("City check failed")
+	}
+	if detail.District != "埇桥区" {
+		t.Error("District check failed")
 	}
 	birth, err := time.Parse("20060102", "19900604")
 	if detail.Birthday != birth {

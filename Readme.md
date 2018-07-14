@@ -45,11 +45,12 @@ func main() {
 
 ```json
 {
-    "cityCode":    420683,
-    "city":        "枣阳市",
-    "province":    "湖北省",
-    "sex":         "男",
-    "birthday":    "1990-06-04 00:00:00 +0000 UTC",
+    "sex":       1,
+    "code":      420683,
+    "district":  "枣阳市",
+    "city":      "襄阳市",
+    "province":  "湖北省",
+    "birthday":  "1990-06-04T00:00:00Z"
 }
 ```
 
