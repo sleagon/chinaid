@@ -56,16 +56,20 @@ func main() {
 
 ## 地域映射
 
-身份证里的地域码往地域转换的映射表来自[中华人民共和国民政部][1]官网，本项目里目前用的版本是2018年5月更新的版本，后续会不定期更新。
+身份证里的地域码往地域转换的映射表来自[中华人民共和国民政部][1]官网，本项目里目前用的版本是2019年4月更新的[版本](http://www.mca.gov.cn/article/sj/xzqh/2019/201901-06/201905271021.html)，后续会不定期更新。
 
 ## 依赖示例
+
+```bash
+go get github.com/sleagon/chinaid
+```
 
 > dep
 
 ```yml
 [[constraint]]
    name = "github.com/sleagon/chinaid"
-   version = "0.2"
+   version = "0.3"
 ```
 
 [1]: http://www.mca.gov.cn/
