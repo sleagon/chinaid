@@ -139,3 +139,17 @@ func (addr *Addr) InitAddr(code int) {
 		addr.Province = prov
 	}
 }
+
+func Transform15To18(idCard string) ( newIdCard string, err error) {
+	if len(idCard) != 15 {
+		return "", ErrInvalidIDCardNo
+	}
+	sum := 0
+	newIdCard = idCard[:6] + "19" + idCard[6:]
+	for k, v := range idCardWeight {
+		sum += v * int(newIdCard[k]-'0')
+	}
+	mod := idCardCheckMap[sum%IDCardModBase]
+	newIdCard = newIdCard + string(mod)
+	return  newIdCard,nil
+}

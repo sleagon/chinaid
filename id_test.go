@@ -29,3 +29,14 @@ func TestIDNum(t *testing.T) {
 		t.Error("Sex check failed")
 	}
 }
+
+func TestTransform15To18(t *testing.T) {
+	testID := "513425330222071"
+	newId,err := Transform15To18(testID)
+	if err != nil {
+		t.Error("Valid id parse failed")
+	}
+	if newId != "513425193302220718" {
+		t.Error("transform fail")
+	}
+}
