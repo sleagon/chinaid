@@ -1,6 +1,6 @@
 # CHINA ID(中国大陆身份证)
 
-[![Build Status](https://travis-ci.org/sleagon/chinaid.svg?branch=master)](https://travis-ci.org/sleagon/chinaid)  [![Go Report Card](https://goreportcard.com/badge/github.com/sleagon/chinaid)](https://goreportcard.com/report/github.com/sleagon/chinaid)  [![GoDoc](https://godoc.org/github.com/jinzhu/gorm?status.svg)](https://godoc.org/github.com/sleagon/chinaid)  [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/sleagon/chinaid.svg?branch=master)](https://travis-ci.org/sleagon/chinaid)  [![Go Report Card](https://goreportcard.com/badge/github.com/sleagon/chinaid)](https://goreportcard.com/report/github.com/sleagon/chinaid)  [![GoDoc](https://godoc.org/github.com/sleagon/chinaid?status.svg)](https://godoc.org/github.com/sleagon/chinaid)  [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 
 > 校验、解析中国大陆身份证号
