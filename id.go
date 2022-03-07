@@ -29,6 +29,7 @@ var (
 var (
 	idCardWeight   = []int{7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2}
 	idCardCheckMap = []byte{'1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'}
+	location, _ = time.LoadLocation("Asia/Shanghai")
 )
 
 // IDCard 身份证号信息
@@ -39,6 +40,10 @@ type IDCardDetail struct {
 	Sex      int       `json:"sex"`
 	Birthday time.Time `json:"birthday"`
 	Addr
+}
+
+func SetLocation(loc *time.Location)  {
+	location = loc
 }
 
 // Valid 判断身份证号是否合法
@@ -94,7 +99,7 @@ func (card IDCard) Decode() (IDCardDetail, error) {
 	icd.InitAddr(ac)
 
 	// birthday
-	birth, err := time.Parse("20060102", id[6:14])
+	birth, err := time.ParseInLocation("20060102", id[6:14], location)
 	if err != nil {
 		return icd, ErrInvalidIDCardNo
 	}

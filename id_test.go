@@ -21,7 +21,7 @@ func TestIDNum(t *testing.T) {
 	if detail.District != "埇桥区" {
 		t.Error("District check failed")
 	}
-	birth, err := time.Parse("20060102", "19900604")
+	birth, err := time.ParseInLocation("20060102", "19900604", location)
 	if detail.Birthday != birth {
 		t.Error("Birthday check failed")
 	}
